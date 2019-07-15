@@ -4,6 +4,8 @@
 /* eslint-disable require-jsdoc */
 /* eslint-disable func-style */
 
+console.log('Sample JavaScript #2 HW #16');
+
 /*
  * #1
  *

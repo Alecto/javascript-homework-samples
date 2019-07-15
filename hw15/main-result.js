@@ -4,7 +4,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-var */
 
-console.log('Sample HW#1');
+console.log('Sample JavaScript HW#1');
 
 /*
  * #1

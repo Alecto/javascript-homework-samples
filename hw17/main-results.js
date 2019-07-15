@@ -8,6 +8,8 @@
 /* eslint-disable sort-keys */
 /* eslint-disable no-param-reassign */
 
+console.log('Sample JavaScript #3 HW #17');
+
 /*
  * #1
  *
