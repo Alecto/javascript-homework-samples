@@ -1,8 +1,4 @@
-/* eslint-disable no-nested-ternary */
-/* eslint-disable sort-keys */
-/* eslint-disable no-var */
-/* eslint-disable require-jsdoc */
-/* eslint-disable func-style */
+console.log('Sample JavaScript #2 HW #16');
 
 /*
  * #1

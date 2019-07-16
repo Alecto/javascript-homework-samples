@@ -1,4 +1,7 @@
-require('../../gulp/gulp-init.js')({HTML: '.'});
+require('../../gulp/gulp-init.js')({
+  HTML: '.',
+  JS: '.'
+});
 
 const comb = require('../../gulp/tasks/comb');
 const cs = require('../../gulp/tasks/create-structure');

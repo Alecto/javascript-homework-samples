@@ -1,4 +1,4 @@
-console.log('Sample HW#1');
+console.log('Sample JavaScript HW#1');
 
 /*
  * #1

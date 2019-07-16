@@ -1,3 +1,4 @@
+/* eslint-disable vars-on-top */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable sort-keys */
 /* eslint-disable no-var */

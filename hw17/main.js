@@ -1,12 +1,4 @@
-/* eslint-disable prefer-reflect */
-/* eslint-disable prefer-spread */
-/* eslint-disable array-bracket-newline */
-/* eslint-disable array-element-newline */
-/* eslint-disable capitalized-comments */
-/* eslint-disable require-jsdoc */
-/* eslint-disable func-style */
-/* eslint-disable sort-keys */
-/* eslint-disable no-param-reassign */
+console.log('Sample JavaScript #3 HW #17');
 
 /*
  * #1
@@ -137,7 +129,7 @@
  */
 
 /*
- * Создайте функции myDouble(n), которая принимает один параметр и  удваивает его.
+ * создайте функции myDouble(n), которая принимает один параметр и  удваивает его.
  * Использовать умножение или другие математические операции внутри функции – запрещено, только bind() и myMul().
  * Функция возвращает результат вычисления.
  */
@@ -148,7 +140,7 @@
 
 // console.log(myDouble(5)); // = myMul(2, 5) = 10
 
-// Аналогичным образом создайте функцию myTriple(n), которая утраивает принимающий параметр, возвращая результат.
+// аналогичным образом создайте функцию myTriple(n), которая утраивает принимающий параметр, возвращая результат.
 
 // console.log(myTriple(3)); // = myMul(3, 3) = 9
 
