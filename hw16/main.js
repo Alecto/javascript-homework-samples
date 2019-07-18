@@ -36,6 +36,11 @@ console.log('Sample JavaScript #2 HW #16');
  * При выполнении задачи не используйте оператор if, требуется решение с логическим оператором ||.
  */
 
+/* eslint-disable capitalized-comments */
+// console.log(defUpperStr('My text')); // MY TEXT
+
+// console.log(defUpperStr()); // DEFAULT TEXT
+
 /*
  * #4
  *
@@ -53,11 +58,17 @@ console.log('Sample JavaScript #2 HW #16');
  * evenFn(20) → [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
  */
 
+// console.log(evenFn(10)); // [2, 4, 6, 8, 10]
+
+// console.log(evenFn(15)); // [2, 4, 6, 8, 10, 12, 14]
+
+// console.log(evenFn(20)); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+
 /*
  * #5
  *
  * Создайте функцию weekFn(n), которая принимает номер дня недели, а возвращает его название.
- * Если вводится строка или число вне диапазона 1..7 – функция должна вернуть null.
+ * Если вводится строка, любое дробное число или число вне диапазона 1..7 – функция должна вернуть null.
  *
  * Например:
  * 1 → 'Понедельник'
@@ -67,6 +78,18 @@ console.log('Sample JavaScript #2 HW #16');
  *
  * В реализации функции обязательно должны быть использованы операторы switch / case / default.
  */
+
+// console.log(weekFn(1)); // 'Понедельник'
+
+// console.log(weekFn(3)); // 'Среда'
+
+// console.log(weekFn(7)); // 'Воскресенье'
+
+// console.log(weekFn(9)); // null
+
+// console.log(weekFn(1.5)); // null
+
+// console.log(weekFn('2')); // null
 
 /*
  * #6
@@ -86,6 +109,22 @@ console.log('Sample JavaScript #2 HW #16');
  * Использование операторов if, switch – запрещено.
  */
 
+// console.log('-1 :', ageClassification(-1)); // -1 : null
+
+// console.log('5 :', ageClassification(5)); // 5 : детский возраст
+
+// console.log('34 :', ageClassification(34)); // -1 : null
+
+// console.log('50 :', ageClassification(50)); // 50 : средний возраст
+
+// console.log('65.1 :', ageClassification(65.1)); // 65.1 : пожилой возраст
+
+// console.log('80 :', ageClassification(80)); // 80 : старческий возраст
+
+// console.log('110 :', ageClassification(110)); // 110 : долгожители
+
+// console.log('130 :', ageClassification(130)); // 130 : null
+
 /*
  * #7
  *
@@ -102,6 +141,12 @@ console.log('Sample JavaScript #2 HW #16');
  * oddFn(15) → [1, 3, 5, 7, 9, 11, 13, 15]
  * oddFn(20) → [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
  */
+
+// console.log(oddFn(10)); // [1, 3, 5, 7, 9]
+
+// console.log(oddFn(15)); // [1, 3, 5, 7, 9, 11, 13, 15]
+
+// console.log(oddFn(20)); // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 
 /*
  * #8
@@ -135,3 +180,11 @@ console.log('Sample JavaScript #2 HW #16');
  * mainFunc(2, 5, cbAdd) → 7
  * mainFunc(2, 5, 'not a func') → false
  */
+
+// console.log(mainFunc(2, 5, cbRandom)); // целые числа в диапазоне 2..5
+
+// console.log(mainFunc(2, 5, cbPow)); // 32
+
+// console.log(mainFunc(2, 5, cbAdd)); // 7
+
+// console.log(mainFunc(2, 5, 'not a func')); // false

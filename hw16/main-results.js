@@ -1,3 +1,4 @@
+/* eslint-disable capitalized-comments */
 /* eslint-disable vars-on-top */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable sort-keys */
@@ -39,7 +40,7 @@ console.log(userObj);
  * userObj.lastName ← Фамилия'
  * userObj.fullName() → 'Имя Фамилия'.
  */
-console.log(userObj.fullName());
+console.log(userObj.fullName()); // Name Last
 
 /*
  * #3
@@ -57,8 +58,8 @@ function defUpperStr(str) {
   return (str || 'Default text').toUpperCase();
 }
 
-console.log(defUpperStr('My text'));
-console.log(defUpperStr());
+console.log(defUpperStr('My text')); // MY TEXT
+console.log(defUpperStr()); // DEFAULT TEXT
 
 /*
  * #4
@@ -84,13 +85,15 @@ function evenFn(n) {
   return arr;
 }
 
-console.log(evenFn(10));
+console.log(evenFn(10)); // [2, 4, 6, 8, 10]
+console.log(evenFn(15)); // [2, 4, 6, 8, 10, 12, 14]
+console.log(evenFn(20)); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
 /*
  * #5
  *
  * Создайте функцию weekFn(n), которая принимает номер дня недели, а возвращает его название.
- * Если вводится строка или число вне диапазона 1..7 – функция должна вернуть null.
+ * Если вводится строка, любое дробное число или число вне диапазона 1..7 – функция должна вернуть null.
  *
  * Например:
  * 1 → 'Понедельник'
@@ -132,10 +135,12 @@ function weekFn(cond) {
   return str;
 }
 
-console.log(weekFn(1));
-console.log(weekFn(3));
-console.log(weekFn(7));
-console.log(weekFn(9));
+console.log(weekFn(1)); // 'Понедельник'
+console.log(weekFn(3)); // 'Среда'
+console.log(weekFn(7)); // 'Воскресенье'
+console.log(weekFn(9)); // null
+console.log(weekFn(1.5)); // null
+console.log(weekFn('2')); // null
 
 /*
  * #6
@@ -172,14 +177,14 @@ function ageClassification(num) {
     : null;
 }
 
-console.log('-1 :', ageClassification(-1));
-console.log('5 :', ageClassification(5));
-console.log('34 :', ageClassification(34));
-console.log('50 :', ageClassification(50));
-console.log('70 :', ageClassification(70));
-console.log('80 :', ageClassification(80));
-console.log('110 :', ageClassification(110));
-console.log('130 :', ageClassification(130));
+console.log('-1 :', ageClassification(-1)); // -1 : null
+console.log('5 :', ageClassification(5)); // 5 : детский возраст
+console.log('34 :', ageClassification(34)); // -1 : null
+console.log('50 :', ageClassification(50)); // 50 : средний возраст
+console.log('65.1 :', ageClassification(65.1)); // 65.1 : пожилой возраст
+console.log('80 :', ageClassification(80)); // 80 : старческий возраст
+console.log('110 :', ageClassification(110)); // 110 : долгожители
+console.log('130 :', ageClassification(130)); // 130 : null
 
 /*
  * #7
@@ -207,9 +212,9 @@ function oddFn(n) {
   return arr;
 }
 
-console.log(oddFn(10));
-console.log(oddFn(15));
-console.log(oddFn(20));
+console.log(oddFn(10)); // [1, 3, 5, 7, 9]
+console.log(oddFn(15)); // [1, 3, 5, 7, 9, 11, 13, 15]
+console.log(oddFn(20)); // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 
 /*
  * #8
@@ -255,7 +260,7 @@ function cbAdd(a, b) {
  * mainFunc(2, 5, cbAdd) → 7
  * mainFunc(2, 5, 'not a func') → false
  */
-console.log(mainFunc(2, 5, cbRandom));
-console.log(mainFunc(2, 5, cbPow));
-console.log(mainFunc(2, 5, cbAdd));
-console.log(mainFunc(2, 5, 'not a func'));
+console.log(mainFunc(2, 5, cbRandom)); // целые числа в диапазоне 2..5
+console.log(mainFunc(2, 5, cbPow)); // 32
+console.log(mainFunc(2, 5, cbAdd)); // 7
+console.log(mainFunc(2, 5, 'not a func')); // false
