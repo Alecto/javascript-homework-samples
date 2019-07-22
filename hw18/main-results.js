@@ -140,7 +140,8 @@ console.log(getLocalDay('2019-07-27')); // 6
  * #5
  *
  * Создайте функцию getDateAgo(date, days), которая возвращает дату,
- * которое была days дней назад от указанной даты date.
+ * которая была days дней назад от указанной даты date.
+ * Дата принимается и возвращается в формате YYYY-MM-DD.
  */
 
 /*
@@ -165,9 +166,9 @@ let getDateAgo = (d, days) => {
   return date.toLocaleString().replace(/(\d.*),\s+(\d.*)/gu, '$1');
 };
 
-console.log(getDateAgo('2019-01-29', 1)); // 1, (28.01.2019)
-console.log(getDateAgo('2019-01-29', 2)); // 31, (27.01.2019)
-console.log(getDateAgo('2019-01-29', 365)); // 2, (29.01.2018)
+console.log(getDateAgo('2019-01-29', 1)); // 28.01.2019
+console.log(getDateAgo('2019-01-29', 2)); // 27.01.2019
+console.log(getDateAgo('2019-01-29', 365)); // 29.01.2018
 
 /*
  * #6
@@ -206,20 +207,20 @@ Object.defineProperties(Car.prototype, {
 });
 
 Car.prototype.info = function () {
-  return `${this.name} ${this.model}, ${this.year}cc, year ${this.year}, ${this.used}`;
+  return `${this.name} ${this.model}, ${this.engine}cc, year ${this.year}, ${this.used}`;
 };
 
 let car = new Car(2000, 'Lacetti', 'Chevrolet', 2010);
 let car2 = new Car(5000, 'FX50 AWD', 'Infinite', 2019);
 
-console.log(car.info()); // chevrolet Lacetti, 2010cc, year 2010, used
+console.log(car.info()); // chevrolet Lacetti, 2000cc, year 2010, used
 car.used = 'new';
-console.log(car.info()); // chevrolet Lacetti, 2019cc, year 2019, new -- год изменен
+console.log(car.info()); // chevrolet Lacetti, 2000cc, year 2019, new -- год изменен
 car.used = 'used';
-console.log(car.info()); // chevrolet Lacetti, 2019cc, year 2019, new -- изменения не выполняются
-console.log(car2.info()); // infinite FX50 AWD, 2019cc, year 2019, new
+console.log(car.info()); // chevrolet Lacetti, 2000cc, year 2019, new -- изменения не выполняются
+console.log(car2.info()); // infinite FX50 AWD, 5000cc, year 2019, new
 car.used = 'used';
-console.log(car2.info()); // infinite FX50 AWD, 2019cc, year 2019, new -- изменения не выполняются
+console.log(car2.info()); // infinite FX50 AWD, 5000cc, year 2019, new -- изменения не выполняются
 
 /*
  * #7
@@ -238,6 +239,7 @@ let testPerformance = (iterations, func) => {
   return Date.now() - time;
 };
 
+// данная функция необходима для корректного тестирования кода
 function test1() {
   let str = myLongStr;
 
@@ -248,8 +250,9 @@ function test1() {
   while (str.indexOf('i') !== -1) str = str.replace('i', '');
 }
 
+// данная функция необходима для корректного тестирования кода
 function test2() {
-  const reg = new RegExp('o|a|e|u|i', 'gui');
+  const reg = new RegExp('[oaeui]', 'gui');
 
   myLongStr.replace(reg, '');
 }

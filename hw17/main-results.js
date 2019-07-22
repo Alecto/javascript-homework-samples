@@ -124,25 +124,25 @@ console.log(myPow(2, 3, myPrint)); // 2^3=8
  *
  * Для созданных ранее объектов определите метод info(), используя ключевое слово this.
  * данный метод должен формировать и возвращать строку с полной информацией об автомобиле, например:
- * Chevrolet Lacetti, 2010cc, year 2010
- * Infinite FX50 AWD, 2018cc, year 2018
+ * Chevrolet Lacetti, 2000cc, year 2010
+ * Infinite FX50 AWD, 5000cc, year 2019
  * пробелы, запятые, символы cc и текст – имеют значение и проверяются при тестировании кода
  *
  * #6
  *
  * Для созданных ранее объектов добавьте новое свойство used, используя аксессоры (геттер и сеттер).
- * сохраните текущий год (например, 2019) в глобальной переменной с именем yearNow
- * если год выпуска автомобиля отличается от текущего года, геттер used должен выводить текст 'used'
- * если год выпуска автомобиля совпадает с текущим годом, геттер used должен выводить текст 'new'
- * если сеттеру used присвоено значение 'new', при этом года выпуска автомобиля отличается от текущего года,
- * необходимо изменить год выпуска автомобиля, установив в качестве значения текущий год
- * если сеттеру used присвоено значение 'used', ничего делать не нужно
+ * - используйте текущий год либо непосредственно в своем коде, либо с помощью глобальной переменной, например, yearNow
+ * - если год выпуска автомобиля отличается от текущего года, геттер used должен выводить текст 'used'
+ * - если год выпуска автомобиля совпадает с текущим годом, геттер used должен выводить текст 'new'
+ * - если сеттеру used присвоено значение 'new', при этом года выпуска автомобиля отличается от текущего года,
+ * - необходимо изменить год выпуска автомобиля, установив в качестве значения текущий год
+ * - если сеттеру used присвоено значение 'used', ничего делать не нужно
  */
 function fullInfo() {
-  return `${this.name} ${this.model}, ${this.year}cc, year ${this.year}, ${this.used}`;
+  return `${this.name} ${this.model}, ${this.engine}cc, year ${this.year}, ${this.used}`;
 }
-// let yearNow = new Date().getFullYear();
-let yearNow = 2019;
+
+let yearNow = new Date().getFullYear();
 let car = {
   engine: 2000,
   model: 'Lacetti',
@@ -170,14 +170,14 @@ let car2 = {
   }
 };
 
-console.log(car.info()); // Chevrolet Lacetti, 2010cc, year 2010, used
+console.log(car.info()); // Chevrolet Lacetti, 2000cc, year 2010, used
 car.used = 'new';
-console.log(car.info()); // Chevrolet Lacetti, 2019cc, year 2019, new -- год изменен
+console.log(car.info()); // Chevrolet Lacetti, 2000cc, year 2019, new -- год изменен
 car.used = 'used';
-console.log(car.info()); // Chevrolet Lacetti, 2019cc, year 2019, new -- изменения не выполняются
-console.log(car2.info()); // Infinite FX50 AWD, 2019cc, year 2019, new
+console.log(car.info()); // Chevrolet Lacetti, 2000cc, year 2019, new -- изменения не выполняются
+console.log(car2.info()); // Infinite FX50 AWD, 5000cc, year 2019, new
 car.used = 'used';
-console.log(car2.info()); // Infinite FX50 AWD, 2019cc, year 2019, new -- изменения не выполняются
+console.log(car2.info()); // Infinite FX50 AWD, 5000cc, year 2019, new -- изменения не выполняются
 
 /*
  * #7

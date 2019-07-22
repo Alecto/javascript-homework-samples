@@ -83,14 +83,15 @@ console.log('Sample JavaScript #4 HW #18');
  * #5
  *
  * Создайте функцию getDateAgo(date, days), которая возвращает дату,
- * которое была days дней назад от указанной даты date.
+ * которая была days дней назад от указанной даты date.
+ * Дата принимается и возвращается в формате YYYY-MM-DD.
  */
 
-// console.log(getDateAgo('2019-01-29', 1)); // 1, (28.01.2019)
+// console.log(getDateAgo('2019-01-29', 1)); // 28.01.2019
 
-// console.log(getDateAgo('2019-01-29', 2)); // 31, (27.01.2019)
+// console.log(getDateAgo('2019-01-29', 2)); // 27.01.2019
 
-// console.log(getDateAgo('2019-01-29', 365)); // 2, (29.01.2018)
+// console.log(getDateAgo('2019-01-29', 365)); // 29.01.2018
 
 /*
  * #6
@@ -135,6 +136,7 @@ console.log('Sample JavaScript #4 HW #18');
  * Если в качестве параметра передается что-либо кроме функции, тестирование не выполняется, возвращается 0.
  */
 
+// данная функция необходима для корректного тестирования кода
 // function test1() {
 //   let str = myLongStr;
 
@@ -145,8 +147,9 @@ console.log('Sample JavaScript #4 HW #18');
 //   while (str.indexOf('i') !== -1) str = str.replace('i', '');
 // }
 
+// данная функция необходима для корректного тестирования кода
 // function test2() {
-//   const reg = new RegExp('o|a|e|u|i', 'gui');
+//   const reg = new RegExp('[oaeui]', 'gui');
 
 //   myLongStr.replace(reg, '');
 // }
