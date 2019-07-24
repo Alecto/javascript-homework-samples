@@ -15,7 +15,7 @@ console.log('Sample JavaScript #3 HW #17');
 
 // console.log(counter(100)); // 100
 
-// console.log(counter(0)); // 101
+// console.log(counter()); // 101
 
 // console.log(counter(500)); // 500
 
