@@ -24,10 +24,10 @@ console.log('Sample JavaScript #4 HW #18');
  *
  * Создайте функцию getLocalDate(date, isSeconds, isISO), которая будет принимать любую
  * дату от конструктора new Date и преобразовывать ее в следующие форматы в зависимости от параметров:
- * getLocalDate(date) → dd.mm.yyyy, hh:mm, например: 16.07.2019, 00:15
- * getLocalDate(date, true) → dd.mm.yyyy, hh:mm, например: 16.07.2019, 00:15:32
- * getLocalDate(date, false, true) → dd.mm.yyyy, hh:mm, например: 2019-06-02, 00:15
- * getLocalDate(date, true, true) → dd.mm.yyyy, hh:mm, например: 2019-06-02, 00:15:32
+ * getLocalDate(date)              → dd.mm.yyyy, hh:mm,    например: 16.07.2019, 00:15
+ * getLocalDate(date, true)        → dd.mm.yyyy, hh:mm:ss, например: 16.07.2019, 00:15:32
+ * getLocalDate(date, false, true) → yyyy-mm-dd, hh:mm,    например: 2019-06-02, 00:15
+ * getLocalDate(date, true, true)  → yyyy-mm-dd, hh:mm:ss, например: 2019-06-02, 00:15:32
  * date – любая дата из конструктора new Date().
  * isSeconds – опциональный параметр для отображения секунд в дате.
  * isISO – опциональный параметр переключения формата даты.
