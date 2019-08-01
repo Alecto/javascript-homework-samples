@@ -19,12 +19,12 @@ console.log('Sample JavaScript #2 HW #16');
  * age – любой возраст, число
  */
 var userObj = {
+  age: 20,
   firstName: 'Name',
   lastName: 'Last',
   fullName() {
     return `${userObj.firstName} ${userObj.lastName}`;
-  },
-  age: 20
+  }
 };
 
 console.log(userObj);
@@ -246,8 +246,8 @@ console.log(oddFn(20)); // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
  * Реализуйте проверку: если третьим параметром передается не функция, нужно вернуть false.
  *
  */
-function mainFunc(a, b, callback) {
-  if (callback && typeof callback === 'function') return callback(a, b);
+function mainFunc(a, b, cb) {
+  if (cb && typeof cb === 'function') return cb(a, b);
 
   return false;
 }

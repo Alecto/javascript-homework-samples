@@ -53,19 +53,17 @@ console.log(counter());
 let counting = (function () {
   let count = 0;
 
-  let changeBy = (val) => count += val;
-
   return {
-    decrement() {
-      changeBy(-1);
-    },
-    increment() {
-      changeBy(1);
-    },
     value(num) {
       if (num !== undefined) count = num;
 
       return count;
+    },
+    decrement() {
+      count--;
+    },
+    increment() {
+      count++;
     }
   };
 }());
@@ -125,8 +123,8 @@ console.log(myPow(2, 3, myPrint)); // 2^3=8
  *
  * Для созданных ранее объектов определите метод info(), используя ключевое слово this.
  * данный метод должен формировать и возвращать строку с полной информацией об автомобиле, например:
- * Chevrolet Lacetti, 2000cc, year 2010
- * Infinite FX50 AWD, 5000cc, year 2019
+ * Chevrolet Lacetti, 2000cc, year 2010, used
+ * Infinite FX50 AWD, 5000cc, year 2019, new
  * пробелы, запятые, символы cc и текст – имеют значение и проверяются при тестировании кода
  *
  * #6
@@ -151,7 +149,7 @@ let car = {
   year: 2010,
   info: fullInfo,
   get used() {
-    return yearNow - this.year > 1 ? 'used' : 'new';
+    return this.year !== yearNow ? 'used' : 'new';
   },
   set used(value) {
     if (value === 'new' && this.year < yearNow) this.year = yearNow;
