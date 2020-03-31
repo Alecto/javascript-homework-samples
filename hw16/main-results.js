@@ -179,7 +179,7 @@ function ageClassification(num) {
 
 console.log('-1 :', ageClassification(-1)); // -1 : null
 console.log('5 :', ageClassification(5)); // 5 : детский возраст
-console.log('34 :', ageClassification(34)); // -1 : null
+console.log('34 :', ageClassification(34)); // 34 : молодой возраст
 console.log('50 :', ageClassification(50)); // 50 : средний возраст
 console.log('65.1 :', ageClassification(65.1)); // 65.1 : пожилой возраст
 console.log('80 :', ageClassification(80)); // 80 : старческий возраст
