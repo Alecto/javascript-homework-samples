@@ -131,7 +131,7 @@ console.log(checkDomainUrl('www.example.domain-hyphen.com')); // false
 function createLinksFromDomains(str) {
   let reg = new RegExp('(http:|https:)\\/\\/(?!:\\/\\/)([a-zA-Z0-9-_]+\\.)*[a-zA-Z0-9][a-zA-Z0-9-_]+\\.[a-zA-Z]{2,5}', 'gi');
 
-  str.match(reg).forEach((item) => str = str.replace(item, `<a href="${item}">${item.replace(/^(http:|https:)\/\//gi, '')}</a>`));
+  str.match(reg).forEach((item) => str = str.replace(item, `<a href="${item}" target="_blank">${item.replace(/^(http:|https:)\/\//gi, '')}</a>`));
 
   return str;
 }
