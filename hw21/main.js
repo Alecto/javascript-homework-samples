@@ -43,7 +43,7 @@ console.log('Sample JavaScript #7 HW #21');
 // console.log(validateFileType('image.file.jpg')); // true
 // console.log(validateFileType('image.png.file')); // false
 // console.log(validateFileType('image.png.jpeg')); // true
-// console.log(validateFileType('image.pngjpeg')); // true
+// console.log(validateFileType('image.pngjpeg')); // false
 
 /*
  * #4

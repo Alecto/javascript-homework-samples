@@ -41,14 +41,16 @@ console.log(replaceHTMLComments('код <!--к1--> без <!-- к2 --> комм�
  * Функция получает строку – имя файла, возвращает true или false.
  */
 function validateFileType(str) {
-  return (/\.(jpg|jpeg|png)$/).test(str);
+  return (/.+(\.jpg|\.jpeg|\.png)$/).test(str);
 }
+console.log('--------------');
 console.log(validateFileType('image.png')); // true
 console.log(validateFileType('image.html')); // false
 console.log(validateFileType('image.file.jpg')); // true
 console.log(validateFileType('image.png.file')); // false
 console.log(validateFileType('image.png.jpeg')); // true
-console.log(validateFileType('image.pngjpeg')); // true
+console.log(validateFileType('image.pngjpeg')); // false
+console.log('--------------');
 
 /*
  * #4
