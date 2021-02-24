@@ -129,6 +129,7 @@ console.log(checkDomainUrl('www.example.domain-hyphen.com')); // false
  * С помощью replace замените в строке домены вида http://site.ua, https://site.com на <a href="http://site.ua" target="_blank">site.ua</a>.
  * Протокол может быть как http, так и https.
  * Функция получает произвольную строку текста с доменами (один и более), возвращает результат преобразования.
+ * В данном задании требуется использовать метод match().
  */
 function createLinksFromDomains(str) {
   let reg = new RegExp('(http:|https:)\\/\\/(?!:\\/\\/)([a-zA-Z0-9-_]+\\.)*[a-zA-Z0-9][a-zA-Z0-9-_]+\\.[a-zA-Z]{2,5}', 'gi');

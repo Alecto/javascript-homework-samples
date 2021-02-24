@@ -116,6 +116,7 @@ console.log('Sample JavaScript #7 HW #21');
  * С помощью replace замените в строке домены вида http://site.ua, https://site.com на <a href="http://site.ua" target="_blank">site.ua</a>.
  * Протокол может быть как http, так и https.
  * Функция получает произвольную строку текста с доменами (один и более), возвращает результат преобразования.
+ * В данном задании требуется использовать метод match().
  */
 
 // <a href="http://site.ua">site.ua</a> text1 <a href="https://site.com">site.com</a> text2 <a href="https://site.com.ua">site.com.ua</a> text3 <a href="https://subdomain.my-site.com.ua">subdomain.my-site.com.ua</a> text4
