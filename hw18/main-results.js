@@ -16,6 +16,9 @@ console.log('Sample JavaScript #4 HW #18');
  * привести строку к нижнему регистру
  * получить коллекцию уникальных, неповторяющихся слов, в которых содержится подстрока,
  * переданная в параметре subStr.
+ *
+ * В примере использовано решение через regExp, который будет рассмотрен немного позже.
+ * Но работу можно решить чере через replace + цикл или replaceAll.
  */
 
 let myLongStr =
@@ -23,11 +26,11 @@ let myLongStr =
 
 let wordsList = (str, subStr) => {
   let reg = new RegExp('\\.|,|\\?|!|:|;|"', 'gui');
-  let arr = str.
-    replace(reg, '').
-    toLowerCase().
-    split(' ').
-    filter((arrItem) => arrItem.indexOf(subStr) > -1);
+  let arr = str
+    .replace(reg, '')
+    .toLowerCase()
+    .split(' ')
+    .filter((arrItem) => arrItem.indexOf(subStr) > -1);
   let res = new Set();
 
   arr.forEach((arrItem) => {
@@ -40,6 +43,7 @@ let wordsList = (str, subStr) => {
 console.log(wordsList(myLongStr, 'lore')); // {"lorem", "dolores", "doloremque", "dolore", "dolorem"}
 console.log(wordsList(myLongStr, 'no')); // {"non", "nostrum", "nobis"}
 console.log(wordsList(myLongStr, 'rep')); // {"repellendus", "repudiandae", "repellat", "reprehenderit"}
+
 
 /*
  * #2
@@ -65,14 +69,11 @@ let getLocalDate = (date, isSeconds = false, isISO = false) => {
     : date.toLocaleString().replace(reg, '');
   else {
     const year = date.getFullYear();
-    const month =
-      date.getMonth() + 1 < 9 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
+    const month = date.getMonth() + 1 < 9 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
     const day = date.getDate() < 9 ? `0${date.getDate()}` : date.getDate();
     const hour = date.getHours() < 9 ? `0${date.getHours()}` : date.getHours();
-    const minutes =
-      date.getMinutes() < 9 ? `0${date.getMinutes()}` : date.getMinutes();
-    const seconds =
-      date.getSeconds() < 9 ? `0${date.getSeconds()}` : date.getSeconds();
+    const minutes = date.getMinutes() < 9 ? `0${date.getMinutes()}` : date.getMinutes();
+    const seconds = date.getSeconds() < 9 ? `0${date.getSeconds()}` : date.getSeconds();
 
     res = isSeconds
       ? `${year}-${month}-${day}, ${hour}:${minutes}:${seconds}`
