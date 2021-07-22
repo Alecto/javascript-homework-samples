@@ -131,6 +131,7 @@ console.log(checkDomainUrl('www.example.domain-hyphen.com')); // false
  * Функция получает произвольную строку текста с доменами (один и более), возвращает результат преобразования.
  * В данном задании требуется использовать метод match().
  */
+// Вариант #1, простой
 function createLinksFromDomains(str) {
   let reg = new RegExp('(http:|https:)\\/\\/(?!:\\/\\/)([a-zA-Z0-9-_]+\\.)*[a-zA-Z0-9][a-zA-Z0-9-_]+\\.[a-zA-Z]{2,5}', 'gi');
 
@@ -144,3 +145,22 @@ console.log(createLinksFromDomains('http://site.ua text1 https://site.com text2 
 // site.ua text1 <a href="https://site.com">site.com</a> text2 <a href="https://site.com.ua">site.com.ua</a> text3 subdomain.my-site.com.ua text4
 console.log(createLinksFromDomains('site.ua text1 https://site.com text2 https://site.com.ua text3 subdomain.my-site.com.ua text4'));
 
+
+// Простое решение некорректно работает при повторении доменов.
+// Также, в нем отсуствует добавление target="_blank" в результат.
+// Продвинутое решение от студентки группы FrontEnd Молчановой Оксаны исправляет указанные недостатки.
+// Тестирование принимает оба вараинта.
+
+// Вариант #2, продвинутый
+// function createLinksFromDomains(str) {
+//   let reg = new RegExp('(http:|https:)\\/\\/(?!:\\/\\/)([a-zA-Z0-9-_]+\\.)*[a-zA-Z0-9][a-zA-Z0-9-_]+\\.[a-zA-Z]{2,5}', 'gi');
+//   let res = '';
+//   let str1;
+//   str.match(reg).forEach(function(item) {
+//     str1 = str.substring(0, (str.indexOf(item) + item.length));
+//     str = str.substring(str1.length);
+//     res += str1.replace(item, `<a href="${item}" target="_blank">${item.replace(/^(http:|https:)\/\//gi, '')}</a>`);
+//     return res;
+//   });
+//   return res + str;
+// };
