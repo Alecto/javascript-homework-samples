@@ -164,3 +164,11 @@ console.log(createLinksFromDomains('site.ua text1 https://site.com text2 https:/
 //   });
 //   return res + str;
 // };
+
+// Вариант #3, продвинутый, сокращенный
+// function createLinksFromDomains(str) {
+//   let reg = new RegExp('(http:|https:)\\/\\/(?!:\\/\\/)([a-zA-Z0-9-_]+\\.)*[a-zA-Z0-9][a-zA-Z0-9-_]+\\.[a-zA-Z]{2,5}', 'gi');
+//   const uniCode = '++!!11Ggsdsd5';
+//   str.match(reg).forEach((item) => str = str.replace(item, `<a href="${item.slice(0, 1) + uniCode + item.slice(1)}" target="_blank">${item.replace(/^(http:|https:)\/\//gi, '')}</a>`));
+//   return str.replaceAll(uniCode, '');
+// };
