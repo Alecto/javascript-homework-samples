@@ -144,9 +144,16 @@ let getLocalDay = (d) => {
   return day;
 };
 
-console.log(getLocalDay('2019-07-16')); // 2
+console.log(getLocalDay('2018-01-10')); // 3
+console.log(getLocalDay('2019-07-21')); // 7
+console.log(getLocalDay('2019-07-22')); // 1
+console.log(getLocalDay('2019-07-23')); // 2
+console.log(getLocalDay('2019-07-24')); // 3
 console.log(getLocalDay('2019-07-25')); // 4
+console.log(getLocalDay('2019-07-26')); // 5
 console.log(getLocalDay('2019-07-27')); // 6
+console.log(getLocalDay('2019-07-28')); // 7
+console.log(getLocalDay('2019-07-29')); // 1
 
 /*
  * #5
