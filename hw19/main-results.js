@@ -6,6 +6,8 @@
 /* eslint-disable max-statements */
 /* eslint-disable no-undef */
 
+console.log('Sample JavaScript #5 HW #19');
+
 let container = null;
 let prevIndicator = null;
 

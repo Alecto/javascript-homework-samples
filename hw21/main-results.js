@@ -3,6 +3,7 @@
 /* eslint-disable require-unicode-regexp */
 /* eslint-disable func-style */
 /* eslint-disable require-jsdoc */
+
 console.log('Sample JavaScript #7 HW #21');
 
 /*

@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable func-style */
-/* eslint-disable require-jsdoc */
+console.log('Sample JavaScript #5 HW #19');
 
 function createCarousel(slidesCount = 5) {
   // ваш код здесь
