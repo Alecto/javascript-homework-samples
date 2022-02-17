@@ -1,3 +1,4 @@
+/* eslint-disable curly */
 /* eslint-disable callback-return */
 /* eslint-disable func-style */
 /* eslint-disable require-jsdoc */
@@ -64,10 +65,9 @@ let getLocalDate = (date, isSeconds = false, isISO = false) => {
   const reg = new RegExp(':\\d{2}$', 'gui');
   let res;
 
-  if (!isISO) res = isSeconds
-    ? date.toLocaleString()
-    : date.toLocaleString().replace(reg, '');
-  else {
+  if (!isISO) {
+    res = isSeconds ? date.toLocaleString() : date.toLocaleString().replace(reg, '');
+  } else {
     const year = date.getFullYear();
     const month = date.getMonth() + 1 < 9 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
     const day = date.getDate() < 9 ? `0${date.getDate()}` : date.getDate();
