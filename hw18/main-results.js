@@ -66,7 +66,9 @@ let getLocalDate = (date, isSeconds = false, isISO = false) => {
   let res;
 
   if (!isISO) {
-    res = isSeconds ? date.toLocaleString() : date.toLocaleString().replace(reg, '');
+    res = isSeconds
+      ? date.toLocaleString()
+      : date.toLocaleString().replace(reg, '');
   } else {
     const year = date.getFullYear();
     const month = date.getMonth() + 1 < 9 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
