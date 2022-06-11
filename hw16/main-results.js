@@ -1,293 +1,283 @@
-/* eslint-disable capitalized-comments */
-/* eslint-disable vars-on-top */
-/* eslint-disable no-nested-ternary */
-/* eslint-disable sort-keys */
-/* eslint-disable no-var */
-/* eslint-disable require-jsdoc */
+/* eslint-disable curly */
+/* eslint-disable callback-return */
 /* eslint-disable func-style */
+/* eslint-disable require-jsdoc */
+/* eslint-disable max-params */
+/* eslint-disable max-statements */
 
-console.log('Sample JavaScript #2 HW #16');
+console.log('Sample JavaScript #4 HW #16');
 
 /*
  * #1
  *
- * Создайте объект userObj, описывающий человека.
+ * Создайте функцию wordsList(str, subStr), принимающую два параметра:
+ * строку текста произвольной длины и подстроку для поиска.
+ * Функция должна вернуть коллекцию уникальных слов в нижнем регистре, без символов-разделителей, т.е.:
+ * из строки str необходимо удалить все следующие символы: . , ! ? ; : "
+ * привести строку к нижнему регистру
+ * получить коллекцию уникальных, неповторяющихся слов, в которых содержится подстрока,
+ * переданная в параметре subStr.
  *
- * Следующие поля обязательны:
- * firstName – любое имя, строка
- * lastName – любая фамилия, строка
- * age – любой возраст, число
+ * В примере использовано решение через regExp, который будет рассмотрен немного позже.
+ * Но работу можно решить чере через replace + цикл или replaceAll.
  */
-var userObj = {
-  age: 20,
-  firstName: 'Name',
-  lastName: 'Last',
-  fullName() {
-    return `${userObj.firstName} ${userObj.lastName}`;
-  }
+
+let myLongStr =
+  'Lorem". ipsum, dolor! sit? amet: consectetur; adipisicing elit. Dolores quas alias animi inventore delectus quo non, fugit officiis a repellendus facere quae perferendis quos doloremque in, accusantium eum sint corrupti similique voluptatibus omnis mollitia id ex. Adipisci temporibus laborum fugit aperiam, minima recusandae nemo! Voluptas, fugiat sunt saepe dignissimos quam possimus vero voluptatibus quas commodi ipsa vitae, est error voluptate ex cum? Ab, numquam doloremque sunt id molestias explicabo tenetur? Corporis, quisquam voluptatem doloremque itaque est quod impedit, commodi illo eius dicta, enim reiciendis quidem minus tempora sapiente ratione. Repudiandae tempora officia voluptate nam cum dolore corrupti dolorem asperiores quisquam dicta, officiis distinctio ad possimus earum rerum ipsam veritatis enim voluptatum ea numquam doloremque deleniti sapiente velit maxime. Temporibus nostrum perspiciatis molestiae tempora, quo molestias numquam atque obcaecati unde quos itaque modi fugiat dolorem non rerum harum, esse, impedit voluptas minus? Deleniti atque reiciendis voluptate aut consequuntur blanditiis dolores dolorem magni adipisci eius unde, rerum explicabo labore molestias non et exercitationem mollitia iure. Est libero recusandae et, animi sunt a blanditiis consequuntur nemo iste laudantium quos sint ipsa ad possimus sequi dolor ipsum mollitia facilis? Officia quasi rerum atque esse voluptatum quae eos! Sequi eum repellat, molestiae enim soluta quos, tempora recusandae nulla facere quae assumenda harum modi laboriosam. Earum error aspernatur explicabo? Earum non, nesciunt distinctio quod dolores facere, placeat consectetur illum omnis eligendi ullam! Totam laudantium voluptates esse inventore molestias sapiente corrupti temporibus iure! Explicabo laudantium repellendus ullam laboriosam. Odit nostrum sit autem at laboriosam? Autem cupiditate facilis dolore nemo perferendis facere! Maiores iure voluptas obcaecati nihil. Rerum dignissimos fugit a dolorem earum soluta, ut at ullam repudiandae sunt, voluptatum fugiat reiciendis distinctio ipsum, neque magni mollitia laborum perferendis nihil voluptatem adipisci assumenda aperiam! Libero natus fuga fugiat corrupti recusandae vel asperiores earum qui explicabo doloremque, magni error expedita dolor quia eos omnis nostrum facilis fugit molestiae culpa placeat eius! Fuga cum obcaecati esse, inventore cumque quibusdam fugiat beatae? Delectus rerum vel repellat fugiat eius id doloribus. Suscipit hic, vel nobis optio obcaecati cupiditate ullam? Facere, vitae natus, reprehenderit debitis, ea reiciendis doloribus possimus repudiandae nihil accusamus iusto neque ex voluptate nam fugiat voluptates atque facilis sed. Vitae non iure placeat, nam doloribus temporibus consectetur esse distinctio sit tempore, corrupti vero amet odit vel nostrum voluptatum! Ipsum nihil omnis tenetur debitis, sit eligendi! Suscipit vitae quae nemo eveniet veritatis. Perspiciatis modi expedita placeat aut voluptate officiis atque quasi tenetur nulla animi! Minus omnis nesciunt beatae ullam itaque facilis a consequatur, at fugiat natus placeat inventore vitae, cumque quo ipsum? Deserunt suscipit velit dolor nemo quasi deleniti nisi, temporibus explicabo laboriosam, corrupti, ad quibusdam ratione praesentium. Quo totam, qui libero, id iusto, asperiores vitae dolorem perferendis minus distinctio animi repudiandae. Reprehenderit maxime eum asperiores velit praesentium nulla soluta minus at ad consequuntur, error deleniti non corrupti voluptatibus ullam repellat quod ipsa tempora ut! Nemo corrupti aut quia corporis odit maxime laudantium nam unde perspiciatis est, dicta perferendis debitis et quod deleniti! Distinctio, sapiente ducimus ipsam id cumque eveniet totam veritatis nisi ex quis amet quod, quisquam fugit est perferendis quia culpa consequatur eaque incidunt. Rem repudiandae voluptatibus adipisci ad soluta deserunt sapiente culpa saepe veritatis similique illo veniam ipsum ducimus nisi, iste est accusantium unde nesciunt laboriosam itaque beatae eius exercitationem neque quam. In aspernatur totam doloribus quisquam voluptatem commodi, nostrum reiciendis, esse maxime ipsa laudantium ut sed quos. Repudiandae odio sunt minus reprehenderit, laudantium aliquam ea aperiam, voluptas placeat nemo harum excepturi commodi nostrum perspiciatis aut iusto. Accusamus ad voluptatem eaque, distinctio accusantium unde voluptatum esse autem molestiae obcaecati numquam. Cumque sint, est temporibus, quia animi iste quo repudiandae, laudantium voluptatibus ducimus architecto. Vel doloribus obcaecati perspiciatis voluptatum voluptatibus molestias sit, sed reiciendis esse ea exercitationem delectus quos officiis aliquid porro architecto magni sint temporibus illo aspernatur reprehenderit deserunt deleniti doloremque? Aliquam, ut minima. Architecto et, magnam dignissimos nam animi facilis? Recusandae quis ex repellat, voluptatibus veritatis modi beatae ea provident? Excepturi eligendi laudantium beatae dolores eum, accusantium eveniet ipsa quidem voluptas repellendus illo veniam magnam saepe asperiores quos modi in necessitatibus officiis tenetur dolorem, minima voluptate similique praesentium! Necessitatibus sint, itaque impedit, laboriosam, ratione blanditiis at dolor quos aliquam nobis nemo amet quia. Nostrum sit nesciunt, illum deleniti, aliquid, aut ipsa sapiente officia molestias ipsam modi. Quod cupiditate vel quidem iure nemo? Quisquam beatae natus est non amet nostrum dicta reiciendis expedita. Consequatur quo pariatur voluptatem voluptatum sed velit molestiae nemo odio sequi in? Soluta laboriosam ipsam incidunt architecto pariatur, harum molestiae dignissimos quaerat ducimus, dolorem autem qui aliquam doloremque tenetur itaque optio fuga, iusto officia at? Esse blanditiis veritatis voluptas, similique, ipsum, voluptate illum beatae ducimus magni perferendis fuga ea? Est voluptatum culpa delectus voluptatibus doloribus recusandae porro veritatis, molestiae magni soluta, possimus quidem voluptas suscipit obcaecati dolores voluptatem neque, asperiores labore corrupti dicta. Consequatur eius, inventore autem doloremque recusandae quae! Neque facere laudantium blanditiis inventore temporibus nostrum praesentium aperiam perspiciatis dicta perferendis ullam ab impedit adipisci dolorem exercitationem dignissimos ipsum minus incidunt tempore in, illo placeat odio dolorum. Maiores sed est id officiis praesentium ratione cumque ut iste alias laboriosam. Repellendus deserunt ut optio exercitationem ab repudiandae ex doloremque nisi magni numquam accusantium recusandae nesciunt sint quisquam odio, eum aliquam et excepturi culpa praesentium nam laudantium soluta dolorem saepe? Dicta hic sint totam temporibus expedita iste velit, minus blanditiis similique! Nemo quam natus explicabo voluptas perspiciatis ex molestias blanditiis magnam quibusdam, consequatur culpa ducimus facere soluta accusamus porro ratione velit fuga eaque. Natus consequuntur odit dolore illo totam minima, cum explicabo expedita debitis aperiam, tempore ducimus eum inventore odio assumenda atque, recusandae error. Doloribus omnis voluptate fugit ad quam a, mollitia culpa commodi libero vero delectus corporis fuga blanditiis nesciunt aut porro incidunt, iure dolore placeat necessitatibus odio quaerat iste. Necessitatibus enim earum praesentium tenetur, temporibus pariatur recusandae perferendis reiciendis numquam consequuntur alias non. Debitis commodi quia, magni minus quaerat aliquam assumenda repudiandae doloribus consectetur ipsam sapiente animi! Dolorem commodi tempore, quos reprehenderit ducimus adipisci cum quia maiores tenetur ex modi quibusdam incidunt. Minima, amet?';
+
+let wordsList = (str, subStr) => {
+  let reg = new RegExp('\\.|,|\\?|!|:|;|"', 'gui');
+  let arr = str
+    .replace(reg, '')
+    .toLowerCase()
+    .split(' ')
+    .filter((arrItem) => arrItem.indexOf(subStr) > -1);
+  let res = new Set();
+
+  arr.forEach((arrItem) => {
+    res.add(arrItem);
+  });
+
+  return res;
 };
 
-console.log(userObj);
+console.log(wordsList(myLongStr, 'lore')); // {"lorem", "dolores", "doloremque", "dolore", "dolorem"}
+console.log(wordsList(myLongStr, 'no')); // {"non", "nostrum", "nobis"}
+console.log(wordsList(myLongStr, 'rep')); // {"repellendus", "repudiandae", "repellat", "reprehenderit"}
+
 
 /*
  * #2
  *
- * Для объекта из п.1 создайте метод fullName, который будет возвращать полное имя,
- * состоящее из firstName и lastName, склеенных в строку через пробел.
- *
- * Например:
- * userObj.firstName ← 'Имя
- * userObj.lastName ← Фамилия'
- * userObj.fullName() → 'Имя Фамилия'.
+ * Создайте функцию getLocalDate(date, isSeconds, isISO), которая будет принимать любую
+ * дату от конструктора new Date и преобразовывать ее в следующие форматы в зависимости от параметров:
+ * getLocalDate(date)              → dd.mm.yyyy, hh:mm,    например: 16.07.2019, 00:15
+ * getLocalDate(date, true)        → dd.mm.yyyy, hh:mm:ss, например: 16.07.2019, 00:15:32
+ * getLocalDate(date, false, true) → yyyy-mm-dd, hh:mm,    например: 2019-06-02, 00:15
+ * getLocalDate(date, true, true)  → yyyy-mm-dd, hh:mm:ss, например: 2019-06-02, 00:15:32
+ * date – любая дата из конструктора new Date().
+ * isSeconds – опциональный параметр для отображения секунд в дате.
+ * isISO – опциональный параметр переключения формата даты.
  */
-console.log(userObj.fullName()); // Name Last
+
+let myDate = new Date();
+let getLocalDate = (date, isSeconds = false, isISO = false) => {
+  const reg = new RegExp(':\\d{2}$', 'gui');
+  let res;
+
+  if (!isISO) {
+    res = isSeconds
+      ? date.toLocaleString()
+      : date.toLocaleString().replace(reg, '');
+  } else {
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1 < 9 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
+    const day = date.getDate() < 9 ? `0${date.getDate()}` : date.getDate();
+    const hour = date.getHours() < 9 ? `0${date.getHours()}` : date.getHours();
+    const minutes = date.getMinutes() < 9 ? `0${date.getMinutes()}` : date.getMinutes();
+    const seconds = date.getSeconds() < 9 ? `0${date.getSeconds()}` : date.getSeconds();
+
+    res = isSeconds
+      ? `${year}-${month}-${day}, ${hour}:${minutes}:${seconds}`
+      : `${year}-${month}-${day}, ${hour}:${minutes}`;
+  }
+
+  return res;
+};
+
+console.log(getLocalDate(myDate)); // 16.07.2019, 00:15
+console.log(getLocalDate(myDate, true)); // 16.07.2019, 00:15:32
+console.log(getLocalDate(myDate, false, true)); // 2019-06-02, 00:15
+console.log(getLocalDate(myDate, true, true)); // 2019-06-02, 00:15:32
+console.log(getLocalDate(new Date(123456))); // 01.01.1970, 03:02
+console.log(getLocalDate(new Date(123456), true)); // 01.01.1970, 03:02:03
+console.log(getLocalDate(new Date(123456), false, true)); // 1970-01-01, 03:02
+console.log(getLocalDate(new Date(123456), true, true)); // 1970-01-01, 03:02:03
+
+// тестирование
+console.log(getLocalDate(new Date(123456)) === '01.01.1970, 03:02');
+console.log(getLocalDate(new Date(123456), true) === '01.01.1970, 03:02:03');
+console.log(getLocalDate(new Date(123456), false, true) === '1970-01-01, 03:02');
+console.log(getLocalDate(new Date(123456), true, true) === '1970-01-01, 03:02:03');
+console.log(getLocalDate(new Date(1999999123456)) === '18.05.2033, 06:18');
+console.log(getLocalDate(new Date(1999999123456), true) === '18.05.2033, 06:18:43');
+console.log(getLocalDate(new Date(1999999123456), false, true) === '2033-05-18, 06:18');
+console.log(getLocalDate(new Date(1999999123456), true, true) === '2033-05-18, 06:18:43');
 
 /*
  * #3
  *
- * Дана функция defUpperStr('My text'), которая возвращает текст, преобразованный в верхний регистр, т.е:
- * defUpperStr('My text') → 'MY TEXT'.
- *
- * Если функция вызывается без параметра defUpperStr(), она не должна возвращать undefined,
- * в этом случае требуется вернуть строку текста по умолчанию в верхнем регистре, т.е:
- * defUpperStr() → 'DEFAULT TEXT'.
- *
- * При выполнении задачи не используйте оператор if, требуется решение с логическим оператором ||.
+ * Создайте функцию getWeekDay(date), которая принимает дату в виде строки в формате 'yyyy-mm-dd'
+ * и выводит текущий день недели: "понедельник", "вторник", … "воскресенье".
  */
-function defUpperStr(str) {
-  return (str || 'Default text').toUpperCase();
-}
 
-console.log(defUpperStr('My text')); // MY TEXT
-console.log(defUpperStr()); // DEFAULT TEXT
+let getWeekDay = (d) => {
+  const date = new Date(d);
+  const days = [
+    'воскресенье',
+    'понедельник',
+    'вторник',
+    'среда',
+    'четверг',
+    'пятница',
+    'суббота'
+  ];
+
+  return days[date.getDay()];
+};
+
+console.log(getWeekDay('2019-01-30')); // среда
+console.log(getWeekDay('2019-07-16')); // вторник
+console.log(getWeekDay('2019-07-27')); // суббота
 
 /*
  * #4
  *
- * Создайте функцию evenFn(n), которая принимает параметром число – количество итераций цикла,
- * т.е. for 0..n. Функция должна вернуть массив, состоящий только из четных значений, генерируемых в цикле.
- *
- * Причем:
- * 0 не должен попадать в результирующий массив
- * цикл должен работать до n включительно
- * разрешен только оператор for
- *
- * Например:
- * evenFn(10) → [2, 4, 6, 8, 10]
- * evenFn(15) → [2, 4, 6, 8, 10, 12, 14]
- * evenFn(20) → [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+ * Напишите функцию, getLocalDay(date) которая возвращает день недели для даты date.
+ * День нужно возвратить в европейской нумерации, т.е. понедельник имеет номер 1, вторник номер 2, …, воскресенье – номер 7.
  */
-function evenFn(n) {
-  let arr = [];
 
-  for (let i = 1; i <= n; i++) if (i % 2 === 0) arr.push(i);
+let getLocalDay = (d) => {
+  const date = new Date(d);
+  let day = date.getDay();
 
-  return arr;
-}
+  if (day === 0) day = 7;
 
-console.log(evenFn(10)); // [2, 4, 6, 8, 10]
-console.log(evenFn(15)); // [2, 4, 6, 8, 10, 12, 14]
-console.log(evenFn(20)); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+  return day;
+};
+
+console.log(getLocalDay('2018-01-10')); // 3
+console.log(getLocalDay('2019-07-21')); // 7
+console.log(getLocalDay('2019-07-22')); // 1
+console.log(getLocalDay('2019-07-23')); // 2
+console.log(getLocalDay('2019-07-24')); // 3
+console.log(getLocalDay('2019-07-25')); // 4
+console.log(getLocalDay('2019-07-26')); // 5
+console.log(getLocalDay('2019-07-27')); // 6
+console.log(getLocalDay('2019-07-28')); // 7
+console.log(getLocalDay('2019-07-29')); // 1
 
 /*
  * #5
  *
- * Создайте функцию weekFn(n), которая принимает номер дня недели, а возвращает его название.
- * Если вводится строка, любое дробное число или число вне диапазона 1..7 – функция должна вернуть null.
- *
- * Например:
- * 1 → 'Понедельник'
- * 2 → 'Вторник'
- * ...
- * 7 → 'Воскресенье'
- *
- * В реализации функции обязательно должны быть использованы операторы switch / case / default.
+ * Создайте функцию getDateAgo(date, days), которая возвращает дату,
+ * которая была days дней назад от указанной даты date.
+ * Дата принимается в формате YYYY-MM-DD, возвращается DD.MM.YYYY.
  */
-function weekFn(cond) {
-  let str = '';
 
-  switch (cond) {
-    case 1:
-      str = 'Понедельник';
-      break;
-    case 2:
-      str = 'Вторник';
-      break;
-    case 3:
-      str = 'Среда';
-      break;
-    case 4:
-      str = 'Четверг';
-      break;
-    case 5:
-      str = 'Пятница';
-      break;
-    case 6:
-      str = 'Суббота';
-      break;
-    case 7:
-      str = 'Воскресенье';
-      break;
-    default:
-      str = null;
-  }
+/*
+ * let formatter = new Intl.DateTimeFormat('uk-UA', {
+ *   year: 'numeric',
+ *   month: 'long',
+ *   day: 'numeric'
+ * });
+ */
 
-  return str;
-}
+let getDateAgo = (d, days) => {
+  const date = new Date(d);
 
-console.log(weekFn(1)); // 'Понедельник'
-console.log(weekFn(3)); // 'Среда'
-console.log(weekFn(7)); // 'Воскресенье'
-console.log(weekFn(9)); // null
-console.log(weekFn(1.5)); // null
-console.log(weekFn('2')); // null
+  date.setDate(date.getDate() - days);
+
+  /*
+   * вариант с formatter вернет дату вида
+   * 28 січня 2019 р.
+   * return formatter.format(date)
+   */
+
+  return date.toLocaleString().replace(/(\d.*),\s+(\d.*)/gu, '$1');
+};
+
+console.log(getDateAgo('2019-01-29', 1)); // 28.01.2019
+console.log(getDateAgo('2019-01-29', 2)); // 27.01.2019
+console.log(getDateAgo('2019-01-29', 365)); // 29.01.2018
 
 /*
  * #6
  *
- * создайте функцию ageClassification(n), которая будет в качестве параметра принимать любые числа
- * и возвращать строку согласно следующим условиям, n:
- *           менее 0 – null
- *             0..24 – 'детский возраст'
- *           24+..44 – 'молодой возраст'
- *           44+..65 – 'средний возраст'
- *           65+..75 – 'пожилой возраст'
- *           75+..90 – 'старческий возраст'
- *          90+..122 – 'долгожители'
- *         более 122 – null
+ * Используя в качестве основы, объект car, описанный в прошлом занятии, создайте прототип Car,
+ * реализующий те же поля (#17.4) и методы(#17.5 и #17.6) у создаваемых объектов.
  *
- * При выполнении задания допускается использовать только тернарный оператор ?.
- * Использование операторов if, switch – запрещено.
+ * Например:
+ * let car = new Car(2000, 'Lacetti', 'Chevrolet', 2010);
+ * let car2 = new Car(5000, 'FX50 AWD', 'Infinite', 2019);
+ *
+ * Способ создания прототипа – только функция-конструктор!
+ * Объекты и их методы, созданные прототипом должны полностью соответствовать объектам из прошлого задания.
  */
-function ageClassification(num) {
-  return num > 0
-    ? num > 24
-      ? num > 44
-        ? num > 65
-          ? num > 75
-            ? num > 90
-              ? num > 122
-                ? null
-                : 'долгожители'
-              : 'старческий возраст'
-            : 'пожилой возраст'
-          : 'средний возраст'
-        : 'молодой возраст'
-      : 'детский возраст'
-    : null;
-}
 
+let Car = function (engine, model, name, year) {
+  this.engine = engine;
+  this.model = model;
+  this.name = name;
+  this.year = year;
+};
 
-console.log('    -1 :', ageClassification(-1)); // -1 : null
-console.log('     1 :', ageClassification(1)); // 1 : детский возраст
-console.log('    24 :', ageClassification(24)); // 24 : детский возраст
-console.log(' 24.01 :', ageClassification(24.01)); // 24.01 : молодой возраст
-console.log('    44 :', ageClassification(44)); // 44 : молодой возраст
-console.log(' 44.01 :', ageClassification(44.01)); // 44.01 : средний возраст
-console.log('    65 :', ageClassification(65)); // 65 : средний возраст
-console.log('  65.1 :', ageClassification(65.1)); // 65.1 : пожилой возраст
-console.log('    75 :', ageClassification(75)); // 75 : пожилой возраст
-console.log(' 75.01 :', ageClassification(75.01)); // 75.01 : старческий возраст
-console.log('    90 :', ageClassification(90)); // 90 : старческий возраст
-console.log(' 90.01 :', ageClassification(90.01)); // 90.01 : долгожители
-console.log('   122 :', ageClassification(122)); // 122 : долгожители
-console.log('122.01 :', ageClassification(122.01)); // 122.01 : null
-console.log('   150 :', ageClassification(150)); // 150 : null
+Object.defineProperties(Car.prototype, {
+  used: {
+    get() {
+      const yearNow = new Date().getFullYear();
 
-/*
- * Блок тестирования, везде должны быть true:
- * console.log('    -1 :', ageClassification(-1) === null); // -1 : null
- * console.log('     1 :', ageClassification(1) === 'детский возраст'); // 1 : детский возраст
- * console.log('    24 :', ageClassification(24) === 'детский возраст'); // 24 : детский возраст
- * console.log(' 24.01 :', ageClassification(24.01) === 'молодой возраст'); // 24.01 : молодой возраст
- * console.log('    44 :', ageClassification(44) === 'молодой возраст'); // 44 : молодой возраст
- * console.log(' 44.01 :', ageClassification(44.01) === 'средний возраст'); // 44.01 : средний возраст
- * console.log('    65 :', ageClassification(65) === 'средний возраст'); // 65 : средний возраст
- * console.log('  65.1 :', ageClassification(65.1) === 'пожилой возраст'); // 65.1 : пожилой возраст
- * console.log('    75 :', ageClassification(75) === 'пожилой возраст'); // 75 : пожилой возраст
- * console.log(' 75.01 :', ageClassification(75.01) === 'старческий возраст'); // 75.01 : старческий возраст
- * console.log('    90 :', ageClassification(90) === 'старческий возраст'); // 90 : старческий возраст
- * console.log(' 90.01 :', ageClassification(90.01) === 'долгожители'); // 90.01 : долгожители
- * console.log('   122 :', ageClassification(122) === 'долгожители'); // 122 : долгожители
- * console.log('122.01 :', ageClassification(122.01) === null); // 122.01 : null
- * console.log('   150 :', ageClassification(150) === null); // 150 : null
- */
+      return yearNow - this.year > 1 ? 'used' : 'new';
+    },
+    set(value) {
+      const yearNow = new Date().getFullYear();
+
+      if (value === 'new' && this.year < yearNow) this.year = yearNow;
+    }
+  }
+});
+
+Car.prototype.info = function () {
+  return `${this.name} ${this.model}, ${this.engine}cc, year ${this.year}, ${this.used}`;
+};
+
+let car = new Car(2000, 'Lacetti', 'Chevrolet', 2010);
+let car2 = new Car(5000, 'FX50 AWD', 'Infinite', 2019);
+
+console.log(car.info()); // chevrolet Lacetti, 2000cc, year 2010, used
+car.used = 'new';
+console.log(car.info()); // chevrolet Lacetti, 2000cc, year 2019, new -- год изменен
+car.used = 'used';
+console.log(car.info()); // chevrolet Lacetti, 2000cc, year 2019, new -- изменения не выполняются
+console.log(car2.info()); // infinite FX50 AWD, 5000cc, year 2019, new
+car.used = 'used';
+console.log(car2.info()); // infinite FX50 AWD, 5000cc, year 2019, new -- изменения не выполняются
 
 /*
  * #7
+ * Напишите функцию testPerformance(iterations, func) для тестирования производительности любых, переданных ей в качестве параметра функций.
+ * iterations – количество повторений для тестирования.
+ * func – тестируемая функция.
  *
- * Создайте функцию oddFn(n), которая принимает параметром число – количество итераций цикла.
- * Функция должна вернуть массив, состоящий только из нечетных значений, генерируемых в цикле.
- *
- * Причем:
- * 0 не должен попадать в результирующий массив
- * цикл должен работать до n включительно
- * разрешен только оператор while
- *
- * Например:
- * oddFn(10) → [1, 3, 5, 7, 9]
- * oddFn(15) → [1, 3, 5, 7, 9, 11, 13, 15]
- * oddFn(20) → [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+ * Если в качестве параметра передается что-либо кроме функции, тестирование не выполняется, возвращается 0.
  */
 
-function oddFn(n) {
-  let arr = [];
-  let i = 0;
+let testPerformance = (iterations, func) => {
+  let time = Date.now();
 
-  while (i++ < n) if (i % 2 !== 0) arr.push(i);
+  if (typeof func === 'function') for (let i = iterations; i--;) func();
 
-  return arr;
+  return Date.now() - time;
+};
+
+// данная функция необходима для корректного тестирования кода
+function test1() {
+  let str = myLongStr;
+
+  while (str.indexOf('o') !== -1) str = str.replace('o', '');
+  while (str.indexOf('a') !== -1) str = str.replace('a', '');
+  while (str.indexOf('e') !== -1) str = str.replace('e', '');
+  while (str.indexOf('u') !== -1) str = str.replace('u', '');
+  while (str.indexOf('i') !== -1) str = str.replace('i', '');
 }
 
-console.log(oddFn(10)); // [1, 3, 5, 7, 9]
-console.log(oddFn(15)); // [1, 3, 5, 7, 9, 11, 13, 15]
-console.log(oddFn(20)); // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+// данная функция необходима для корректного тестирования кода
+function test2() {
+  const reg = new RegExp('[oaeui]', 'gui');
 
-/*
- * #8
- *
- * Создайте основную функцию mainFunc(a, b, func), которая принимает три параметра:
- * a – число
- * b - число
- * func –  обрабатывающая параметры a и b, возвратная (callback) функция
- *
- * Реализуйте проверку: если третьим параметром передается не функция, нужно вернуть false.
- *
- */
-function mainFunc(a, b, cb) {
-  if (cb && typeof cb === 'function') return cb(a, b);
-
-  return false;
+  myLongStr.replace(reg, '');
 }
 
-/*
- * реализуйте следующие функции, которые будут осуществлять механизм callback в основной функции,
- * возвращая ей результат собственного вычисления...
- * для возведения в степень и получения произвольного значения можете воспользоваться методами объекта Math.
- */
-
-// cbRandom(a, b) – вычисляет и возвращает произвольное целое число в диапазоне между a и b включительно.
-function cbRandom(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-// cbPow(a, b) – вычисляет и возвращает результат возведения числа a в степень b.
-function cbPow(num, pow) {
-  return Math.pow(num, pow);
-}
-// cbAdd(a, b) – вычисляет и возвращает сумму двух чисел a и b.
-function cbAdd(a, b) {
-  return a + b;
-}
-
-/*
- * mainFunc() должна возвращать результат работы переданной ей возвратной функции, например:
- * mainFunc(2, 5, cbRandom) → случайно от 2 до 5 включительно
- * mainFunc(10, 30, cbRandom) → случайно 10..30 включительно
- * mainFunc(2, 5, cbPow) → 32
- * mainFunc(2, 5, cbAdd) → 7
- * mainFunc(2, 5, 'not a func') → false
- */
-console.log(mainFunc(2, 5, cbRandom)); // целые числа в диапазоне 2..5
-console.log(mainFunc(2, 5, cbPow)); // 32
-console.log(mainFunc(2, 5, cbAdd)); // 7
-console.log(mainFunc(2, 5, 'not a func')); // false
+console.log(testPerformance(100, test1));
+console.log(testPerformance(100, test2));
+console.log(testPerformance(100, 12345));
